@@ -1,4 +1,4 @@
-import { FC, useEffect } from "react";
+import { FC } from "react";
 import {
     Button,
     Container,
@@ -10,31 +10,31 @@ import {
     Segment,
 } from "semantic-ui-react";
 
-import SparqlClient from "sparql-http-client";
-import { BUNKERS_1923 } from "./queries";
+// import SparqlClient from "sparql-http-client";
+// import { BUNKERS_1923 } from "./queries";
 
 const App: FC = () => {
 
-	useEffect(() => {
-		const doQuery = async () => {
-			const endpointUrl = "https://linkeddata.cultureelerfgoed.nl/sparql";
-			const client = new SparqlClient({ endpointUrl })
-			const stream = await client.query.select(BUNKERS_1923)
+	// useEffect(() => {
+	// 	const doQuery = async () => {
+	// 		const endpointUrl = "https://linkeddata.cultureelerfgoed.nl/sparql";
+	// 		const client = new SparqlClient({ endpointUrl })
+	// 		const stream = await client.query.select(BUNKERS_1923)
 		
-			stream.on('data', row => {
-				Object.entries(row).forEach(([key, value]) => {
-					const val = value as any;
-					console.log(`${key}: ${val.value} (${val.termType})`)
-				});
-			})
+	// 		stream.on('data', row => {
+	// 			Object.entries(row).forEach(([key, value]) => {
+	// 				const val = value as any;
+	// 				console.log(`${key}: ${val.value} (${val.termType})`)
+	// 			});
+	// 		})
 		
-			stream.on('error', err => {
-				console.error(err)
-			});
-		}
+	// 		stream.on('error', err => {
+	// 			console.error(err)
+	// 		});
+	// 	}
 
-		doQuery();
-	}, []);
+	// 	doQuery();
+	// }, []);
 
     return (
         <Container style={{ marginTop: "3em" }}>
