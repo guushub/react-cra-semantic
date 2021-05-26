@@ -41,7 +41,7 @@ const App: FC = () => {
             <Header as="h1">Theming Examples</Header>
 
             <Header as="h2" dividing>
-                Site
+                Site 4 CI/CD
             </Header>
 
             <Grid columns={3} stackable>
